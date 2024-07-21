@@ -6086,7 +6086,7 @@ local function setPlayerAppearance(payload, entity, cb)
         ClearPedProp(entity, i)
     end
 
-    if payload.head_overlay then
+    if payload.appearance then
         SetPedHeadBlendData(
             entity,
             payload.appearance.head_blend[1],
@@ -6100,9 +6100,7 @@ local function setPlayerAppearance(payload, entity, cb)
             payload.appearance.head_blend[9] + 0.0,
             true
         )
-    end
 
-    if payload.appearance then
         SetPedFaceFeature(entity, 0, payload.appearance.nose_width_peak[1] + 0.0)
         SetPedFaceFeature(entity, 1, payload.appearance.nose_width_peak[2] + 0.0)
         SetPedFaceFeature(entity, 2, payload.appearance.nose_length_tip[1] + 0.0)
