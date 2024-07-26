@@ -15,7 +15,7 @@ local skinData = {
 
 RegisterNetEvent('nf-skin_migrate:client:qb-clothing', function(playerSkin, type)
     local model = playerSkin.model
-    model = model ~= nil and tonumber(model) or false
+    model = model ~= nil and tonumber(model) or "mp_m_freemode_01"
     Citizen.CreateThread(function()
         lib.requestModel(model, 1000)
         SetPlayerModel(cache.playerId, model)
@@ -24,7 +24,7 @@ RegisterNetEvent('nf-skin_migrate:client:qb-clothing', function(playerSkin, type
         QB_Clothing(playerSkin, cache.ped, function(skin)
             TriggerServerEvent("nf-skin_migrate:server:qb-clothing_done",
                 playerSkin.citizenid,
-                exports['nf-skin']:GetPedHashName(model),
+                exports['nf-skin']:GetPedHashName(cache.ped),
                 type == "playerskins" and skin or {
                     components = skin.components,
                     props = skin.props,
