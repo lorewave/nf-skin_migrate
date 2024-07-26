@@ -3,7 +3,7 @@ lib.addCommand("migration", {
     params = {
         {
             name = "resourceName",
-            help = "[qb, illenium, nf]",
+            help = "[qb, illenium, nf, esx]",
             type = "string",
         },
         {
@@ -46,6 +46,14 @@ lib.addCommand("migration", {
             CreateThread(function()
                 MigrateNFClothingOutfits(source)
             end)
+        end
+    elseif resourceName == "esx" then
+        if skinsType == "skins" then
+            CreateThread(function()
+                MigrateESX(source)
+            end)
+        elseif skinsType == "outfits" then
+            print("Outfits migration is not supported for ESX")
         end
     end
 end)
