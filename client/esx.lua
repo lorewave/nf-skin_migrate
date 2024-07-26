@@ -7,7 +7,7 @@ RegisterNetEvent('nf-skin_migrate:client:esx', function(playerSkin)
         Wait(150)
         SetPedComponentVariation(cache.ped, 0, 0, 0, 2)
         ESX_Clothing(playerSkin, cache.ped, function(skin)
-            TriggerServerEvent("nf-skin_migrate:server:esx",
+            TriggerServerEvent("nf-skin_migrate:server:esx_done",
                 playerSkin.citizenid,
                 exports['nf-skin']:GetPedHashName(cache.ped),
                 skin
