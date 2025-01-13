@@ -20,13 +20,6 @@ function MigrateESX(source)
         continue = false
         migrated = migrated + 1
     end
-
-    lib.notify(source, {
-        title = "Migration esx",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 RegisterNetEvent("nf-skin_migrate:server:esx_done", function(identifier, model, skin)
@@ -43,11 +36,4 @@ RegisterNetEvent("nf-skin_migrate:server:esx_done", function(identifier, model, 
     })
 
     continue = true
-
-    lib.notify(_source, {
-        title = "Migration esx",
-        description = "Player " .. identifier .. " migrated",
-        type = "success",
-        position = "top-right",
-    })
 end)
