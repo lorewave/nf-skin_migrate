@@ -12,13 +12,6 @@ function MigrateIlleniumClothing(source)
         continue = false
         migrated = migrated + 1
     end
-
-    lib.notify(source, {
-        title = "Migration illenium",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 function MigrateIlleniumClothingOutfits(source)
@@ -33,13 +26,6 @@ function MigrateIlleniumClothingOutfits(source)
         continue = false
         migrated = migrated + 1
     end
-
-    lib.notify(source, {
-        title = "Migration illenium",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 RegisterNetEvent("nf-skin_migrate:server:illenium_done", function(citizenid, model, skin, type)
@@ -56,11 +42,4 @@ RegisterNetEvent("nf-skin_migrate:server:illenium_done", function(citizenid, mod
     })
 
     continue = true
-
-    lib.notify(_source, {
-        title = "Migration illenium",
-        description = "Player " .. citizenid .. " migrated",
-        type = "success",
-        position = "top-right",
-    })
 end)
