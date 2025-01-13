@@ -22,13 +22,6 @@ function MigrateQBClothing(source)
             migrated = migrated + 1
         end
     end
-
-    lib.notify(source, {
-        title = "Migration qb-clothing",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 function MigrateQBClothingOutfits(source)
@@ -53,13 +46,6 @@ function MigrateQBClothingOutfits(source)
             migrated = migrated + 1
         end
     end
-
-    lib.notify(source, {
-        title = "Migration qb-clothing",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 RegisterNetEvent("nf-skin_migrate:server:qb-clothing_done", function(citizenid, model, skin, type)
@@ -76,11 +62,4 @@ RegisterNetEvent("nf-skin_migrate:server:qb-clothing_done", function(citizenid, 
     })
 
     continue = true
-
-    lib.notify(_source, {
-        title = "Migration qb-clothing",
-        description = "Player " .. citizenid .. " migrated",
-        type = "success",
-        position = "top-right",
-    })
 end)
