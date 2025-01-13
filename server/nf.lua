@@ -20,13 +20,6 @@ function MigrateNFClothing(source)
         continue = false
         migrated = migrated + 1
     end
-
-    lib.notify(source, {
-        title = "Migration nf-skin",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 function MigrateNFClothingOutfits(source)
@@ -48,13 +41,6 @@ function MigrateNFClothingOutfits(source)
         continue = false
         migrated = migrated + 1
     end
-
-    lib.notify(source, {
-        title = "Migration qb-clothing",
-        description = "Migrated " .. migrated .. " players",
-        type = "success",
-        position = "top-right",
-    })
 end
 
 RegisterNetEvent("nf-skin_migrate:server:nf-skin_done", function(citizenid, model, skin, type, outfitname)
@@ -80,11 +66,4 @@ RegisterNetEvent("nf-skin_migrate:server:nf-skin_done", function(citizenid, mode
     end
 
     continue = true
-
-    lib.notify(_source, {
-        title = "Migration nf-skin",
-        description = "Player " .. citizenid .. " migrated",
-        type = "success",
-        position = "top-right",
-    })
 end)
